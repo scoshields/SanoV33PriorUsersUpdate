@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark mode transitions */
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Base responsive container */
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* Ensure proper text sizing on mobile */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 640px) {
+  button,
+  select,
+  input[type="checkbox"],
+  input[type="radio"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  textarea {
+    min-height: 44px;
+  }
+
+  .touch-target {
+    padding: 0.75rem;
+  }
+
+  /* Adjust spacing for mobile */
+  .mobile-spacing {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Ensure proper text size on mobile */
+  .text-sm {
+    font-size: 0.9375rem;
+  }
+}
+
+/* Dark mode styles */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  background-color: theme('colors.dark.900');
+  color: theme('colors.dark.50');
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: theme('colors.dark.800');
+  border-color: theme('colors.dark.700');
+  color: theme('colors.dark.50');
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  border-color: theme('colors.blue.500');
+  ring-color: theme('colors.blue.500');
+}
+
+.dark .bg-white {
+  background-color: theme('colors.dark.800');
+}
+
+.dark .bg-gray-50 {
+  background-color: theme('colors.dark.900');
+}
+
+.dark .text-gray-900 {
+  color: theme('colors.dark.50');
+}
+
+.dark .text-gray-700 {
+  color: theme('colors.dark.200');
+}
+
+.dark .text-gray-600 {
+  color: theme('colors.dark.300');
+}
+
+.dark .text-gray-500 {
+  color: theme('colors.dark.400');
+}
+
+.dark .border-gray-200 {
+  border-color: theme('colors.dark.700');
+}
+
+.dark .hover\:bg-gray-50:hover {
+  background-color: theme('colors.dark.800');
+}
+
+.dark .hover\:text-gray-900:hover {
+  color: theme('colors.dark.50');
+}
+
+/* Smooth transitions for collapsible sections */
+.section-content {
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+}
